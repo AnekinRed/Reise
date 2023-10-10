@@ -17,9 +17,7 @@
             <aside class="LayoutLeft">  <!--information columns (might be worth dividing them further)-->
               
                 <div id="mySidenav" class="sidenav">
-                    <a href="javascript:void(0)" class="closebtn" id="button" onclick="CloseNav()">
-                        <img src="CSS/Media/CloseButton.png">
-                    </a>
+                    <a href="javascript:void(0)" class="closebtn" id="button" onclick="NavInteract()"></a>
                     <a href="#">About</a>
                     <a href="#">Services</a>
                     <a href="#">Clients</a>
@@ -31,16 +29,25 @@
                   
                   
                   <script>
-                    let Navbutton = document.getElementById("button").innerHTML ='<img src="CSS/Media/OpenButton.png">';
-                    function CloseNav(){
+                    let _Navbutton = document.getElementById("button").innerHTML ='<img src="CSS/Media/CloseButton.png">';
+                    let _check = true;
+                    function NavInteract(){
+                        if (_check = true){
                         document.getElementById("mySidenav").style.left="-9%";
-                        Navbutton = document.getElementById("button").innerHTML ='<img src="CSS/Media/OpenButton.png">';
+                        _Navbutton = document.getElementById("button").innerHTML ='<img src="CSS/Media/OpenButton.png">';
                         console.log("it works");
+                        _check = false;
+                        }
+                        else if(_check = false){
+                            document.getElementById("mySidenav").style.left = "-1%";
+                            _Navbutton = document.getElementById("button").innerHTML ='<img src="CSS/Media/CloseButton.png">';
+                            console.log("it works");
+                            _check = true;
+                        }
                     }
-
                     function OpenNav(){
                         document.getElementById("mySidenav").style.left = "-1%";
-                        Navbutton = document.getElementById("button").innerHTML ='<img src="CSS/Media/CloseButton.png">';
+                        _Navbutton = document.getElementById("button").innerHTML ='<img src="CSS/Media/CloseButton.png">';
                         console.log("it works");
                     }
                   
