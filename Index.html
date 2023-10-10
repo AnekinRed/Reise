@@ -15,12 +15,11 @@
         </header>
         <main class="LayoutMain">
             <aside class="LayoutLeft">  <!--information columns (might be worth dividing them further)-->
-                <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img src="CSS/Media/OpenButton.png" class="OpenButton"></span>
-            </aside>
-
-            <article class="LayoutMiddle">  
+              
                 <div id="mySidenav" class="sidenav">
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="javascript:void(0)" class="closebtn" id="button" onclick="CloseNav()">
+                        <img src="CSS/Media/CloseButton.png">
+                    </a>
                     <a href="#">About</a>
                     <a href="#">Services</a>
                     <a href="#">Clients</a>
@@ -32,14 +31,24 @@
                   
                   
                   <script>
-                  function openNav() {
-                    document.getElementById("mySidenav").style.width = "200px";
-                  }
+                    let Navbutton = document.getElementById("button").innerHTML ='<img src="CSS/Media/OpenButton.png">';
+                    function CloseNav(){
+                        document.getElementById("mySidenav").style.left="-10%";
+                        Navbutton = document.getElementById("button").innerHTML ='<img src="CSS/Media/OpenButton.png">';
+                        console.log("it works");
+                    }
+
+                    function OpenNav(){
+                        document.getElementById("mySidenav").style.left = "-1%";
+                        Navbutton = document.getElementById("button").innerHTML ='<img src="CSS/Media/CloseButton.png">';
+                        console.log("it works");
+                    }
                   
-                  function closeNav() {
-                    document.getElementById("mySidenav").style.width = "0";
-                  }
                   </script>
+            </aside>
+
+            <article class="LayoutMiddle">  
+
             </article>
 
             <nav class="LayoutRight">   

@@ -48,17 +48,22 @@ p{
 }
 
 .sidenav {
-    height: 50%;
-    width: 0;
+    background-image: url("Media/SideNavTransparent.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90%;
+    width: 220px;
     position: fixed;
     z-index: 2;
-    top: 110px;
-    left: 0;
-   
+    top: 0px;
+    left: 0px;
+    background-color:rgb(1, 232, 241);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-    background-image: url("CSS/Media/SideNav.png");
+    border-radius: 0% 16% 15% 0%;
+    
   }
   
   .sidenav a {
@@ -76,13 +81,21 @@ p{
   
   .sidenav .closebtn {
     position: absolute;
-    top: 0;
-    right: 25px;
+    top: 4%;
+    right: 0px;
     font-size: 36px;
-    margin-left: 50px;
+    margin-left: 30px;
   }
   
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+  }
+
+  #button{
+    position: absolute;
+    top: 4%;
+    right: 0px;
+    font-size: 36px;
+    margin-left: 30px;
   }
