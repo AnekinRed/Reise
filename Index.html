@@ -29,26 +29,23 @@
                   
                   
                   <script>
-                    let _Navbutton = document.getElementById("button").innerHTML ='<img src="CSS/Media/CloseButton.png">';
+                    let _Navbutton = document.getElementById("button").innerHTML ='<img src="CSS/Media/OpenButton.png">';
                     let _check = true;
+                    let StylePercent = "-9%"
+                    document.getElementById("mySidenav").style.left=StylePercent;
                     function NavInteract(){
                         if (_check = true){
-                        document.getElementById("mySidenav").style.left="-9%";
-                        _Navbutton = document.getElementById("button").innerHTML ='<img src="CSS/Media/OpenButton.png">';
-                        console.log("it works");
-                        _check = false;
-                        }
-                        else if(_check = false){
-                            document.getElementById("mySidenav").style.left = "-1%";
-                            _Navbutton = document.getElementById("button").innerHTML ='<img src="CSS/Media/CloseButton.png">';
-                            console.log("it works");
-                            _check = true;
-                        }
-                    }
-                    function OpenNav(){
-                        document.getElementById("mySidenav").style.left = "-1%";
+                        let StylePercent = "-1%"
                         _Navbutton = document.getElementById("button").innerHTML ='<img src="CSS/Media/CloseButton.png">';
                         console.log("it works");
+                        let _check = false;
+                        }
+                        else if(_check = false){
+                            let StylePercent = "-9%"
+                            _Navbutton = document.getElementById("button").innerHTML ='<img src="CSS/Media/OpenButton.png">';
+                            console.log("it works");
+                            let _check = true;
+                        }
                     }
                   
                   </script>
