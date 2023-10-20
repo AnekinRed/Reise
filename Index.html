@@ -17,36 +17,37 @@
             <aside class="LayoutLeft">  <!--information columns (might be worth dividing them further)-->
               
                 <div id="mySidenav" class="sidenav">
-                    <a href="javascript:void(0)" class="closebtn" id="button" onclick="NavInteract()"></a>
+                     <a href="#" class="closebtn" id="button" onclick="toggleNav()"></a>
                     <a href="#">About</a>
                     <a href="#">Services</a>
                     <a href="#">Clients</a>
                     <a href="#">Contact</a>
                   </div>
                   
-                  <h2>Animated Sidenav Example</h2>
-                  <p>Click on the element below to open the side navigation menu.</p>
+                
                   
                   
                   <script>
-                    let _Navbutton = document.getElementById("button").innerHTML ='<img src="CSS/Media/OpenButton.png">';
-                    let _check = true;
-                    let StylePercent = "-9%"
-                    document.getElementById("mySidenav").style.left=StylePercent;
-                    function NavInteract(){
-                        if (_check = true){
-                        let StylePercent = "-1%"
-                        _Navbutton = document.getElementById("button").innerHTML ='<img src="CSS/Media/CloseButton.png">';
-                        console.log("it works");
-                        let _check = false;
-                        }
-                        else if(_check = false){
-                            let StylePercent = "-9%"
-                            _Navbutton = document.getElementById("button").innerHTML ='<img src="CSS/Media/OpenButton.png">';
-                            console.log("it works");
-                            let _check = true;
+                    document.addEventListener("DOMContentLoaded", function() {
+                    const button = document.getElementById("button");
+                    const nav = document.getElementById("mySidenav");
+                    let isOpen = false;
+
+                    function toggleNav() {
+                        isOpen = !isOpen;
+                        if (isOpen) {
+                        nav.style.left = "-1%";
+                        button.innerHTML = '<img src="CSS/Media/CloseButton.png">';
+                        console.log("Nav opened");
+                        } else {
+                        nav.style.left = "-9%";
+                        button.innerHTML = '<img src="CSS/Media/OpenButton.png">';
+                        console.log("Nav closed");
                         }
                     }
+
+                    button.addEventListener("click", toggleNav);
+                    });
                   
                   </script>
             </aside>
